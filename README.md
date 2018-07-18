@@ -1,8 +1,11 @@
 # Watcher of Friends Online
 
-[TODO. There will be project description]
+## Description
++ Requires a user's login and password
++ Returns a *JSON* data and print from them first and last name
++ Remember, it is recommended to use [virtualenv/venv](https://devman.org/encyclopedia/pip/pip_virtualenv/) for better isolation.
 
-# How to Install
+## How to Install
 
 Python 3 should be already installed. Then use pip (or pip3 if there is a conflict with old Python 2 setup) to install dependencies:
 
@@ -10,7 +13,21 @@ Python 3 should be already installed. Then use pip (or pip3 if there is a confli
 pip install -r requirements.txt # alternatively try pip3
 ```
 
-Remember, it is recommended to use [virtualenv/venv](https://devman.org/encyclopedia/pip/pip_virtualenv/) for better isolation.
+## Example starting
+```bash
+python vk_friends_online.py
+    Input your username: <your login>
+    Input your password: <your password>
+``` 
+
+## Example results
+```bash
+Денизко Юрьев
+Василий Мерзляков
+Даниил Гуляков
+Белла Миронова
+Никита Горбадей
+```
 
 # Project Goals
 
