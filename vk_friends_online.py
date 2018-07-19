@@ -3,6 +3,7 @@ from getpass import getpass
 
 
 APP_ID = 6636679
+VER_API = 5.80
 
 
 def get_user_login():
@@ -15,7 +16,7 @@ def get_user_password():
     return password
 
 
-def get_online_friends(login, password, version_api):
+def get_online_friends(login, password):
     session = vk.AuthSession(
         app_id=APP_ID,
         user_login=login,
@@ -24,8 +25,8 @@ def get_online_friends(login, password, version_api):
     )
     api = vk.API(session)
     friends_online = api.users.get(
-        user_ids=api.friends.getOnline(v=version_api),
-        v=version_api
+        user_ids=api.friends.getOnline(v=VER_API),
+        v=VER_API
     )
     return friends_online
 
@@ -39,7 +40,7 @@ if __name__ == "__main__":
     login = get_user_login()
     password = get_user_password()
     try:
-        friends_online = get_online_friends(login, password, 5.80)
+        friends_online = get_online_friends(login, password)
     except vk.exceptions.VkException:
         exit("Error: you input incorrect login or password!")
     output_friends_to_console(friends_online)
